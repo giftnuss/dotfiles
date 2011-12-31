@@ -1,0 +1,8 @@
+[user]
+	name = Sebatian B. Knapp
+	email = rock@ccls-online.de
+[alias]
+	ci = commit
+	br = branch
+	co = checkout
+	st = status -s
