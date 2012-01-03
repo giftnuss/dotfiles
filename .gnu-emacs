@@ -18,7 +18,7 @@
    (setq c-basic-offset 4)
    (setq c-auto-newline nil)
    (setq indent-tabs-mode nil)
-   (add-hook 'write-file-functions 'php-delete-trailing-blank-lines)
+   (add-hook 'write-file-functions 'delete-trailing-whitespace)
    t)
 (add-hook 'php-mode-hook 'my-php-mode-hook)
 
