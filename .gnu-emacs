@@ -5,7 +5,10 @@
 ;; ===================================
 ;;                PHP
 ;; ===================================
-(require 'php-mode)
+(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.phtml" . php-mode))
 
 (defun my-php-mode-hook ()
    (c-set-offset 'substatement-open 0)
@@ -22,5 +25,7 @@
 ;; ===================================
 ;;               Perl
 ;; ===================================
-(require 'cperl-mode)
+(autoload 'cperl-mode "cperl-mode" "Major mode for editing Perl5 code." t)
+(add-to-list 'auto-mode-alist '("\\.pl" . cperl-mode))
+(add-to-list 'auto-mode-alist '("\\.pm" . cperl-mode))
 
