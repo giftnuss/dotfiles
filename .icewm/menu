@@ -2,6 +2,7 @@
 prog xterm xterm xterm
 prog Epiphany mozilla epiphany
 prog Gimp gimp gimp
+prog Emacs emacs emacs
 separator
 menuprog SUSE folder xdg_menu --format icewm
 
