@@ -2,6 +2,9 @@
 (add-to-list 'load-path "~/.emacs.d/")
 (add-to-list 'load-path "~/.emacs.d/perl/")
 
+;; useful resources:
+;;   * http://sachachua.com/blog/2008/07/emacs-and-php-on-the-fly-syntax-checking-with-flymake/
+
 ;; ===================================
 ;;                PHP
 ;; ===================================
@@ -19,6 +22,10 @@
    (setq c-auto-newline nil)
    (setq indent-tabs-mode nil)
    (add-hook 'write-file-functions 'delete-trailing-whitespace)
+
+   (flymake-mode 1)
+   (define-key php-mode-map '[M-S-up] 'flymake-goto-prev-error)
+   (define-key php-mode-map '[M-S-down] 'flymake-goto-next-error)
    t)
 (add-hook 'php-mode-hook 'my-php-mode-hook)
 
@@ -28,4 +35,28 @@
 (autoload 'cperl-mode "cperl-mode" "Major mode for editing Perl5 code." t)
 (add-to-list 'auto-mode-alist '("\\.pl" . cperl-mode))
 (add-to-list 'auto-mode-alist '("\\.pm" . cperl-mode))
+
+(defun my-cperl-mode-hook ()
+    (flymake-mode 1)
+    (define-key cperl-mode-map '[M-S-up] 'flymake-goto-prev-error)
+    (define-key cperl-mode-map '[M-S-down] 'flymake-goto-next-error)
+    t)
+(add-hook 'cperl-mode-hook 'my-cperl-mode-hook)
+
+;; ===================================
+;;             Flymake
+;; =================
+(require 'flymake)
+
+;; nicht mehr notwendig aber ein gutes Beispiel
+;;(defun flymake-php-init ()
+;;  "Use php to check the syntax of the current file."
+;;  (let* ((temp (flymake-init-create-temp-buffer-copy 'flymake-create-temp-inplace))
+;;	 (local (file-relative-name temp (file-name-directory buffer-file-name))))
+;;    (list "php" (list "-f" local "-l"))))
+;;
+;;(add-to-list 'flymake-err-line-patterns
+;;  '("\\(Parse\\|Fatal\\) error: +\\(.*?\\) in \\(.*?\\) on line \\([0-9]+\\)$" 3 4 nil 2))
+;;
+;;(add-to-list 'flymake-allowed-file-name-masks '("\\.php$" flymake-php-init))
 
