@@ -21,6 +21,7 @@ fi
 # capslock into escape
 xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 
+xset -b
 
 # 
 # finally start the window manager
