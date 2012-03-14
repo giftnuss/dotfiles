@@ -8,3 +8,6 @@ else
     eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
 fi
 
+# Linux Server Hack #15
+alias ducks='du -cks * |sort -rn |head -11'
+
