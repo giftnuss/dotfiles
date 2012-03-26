@@ -6,3 +6,4 @@
 	br = branch
 	co = checkout
 	st = status -s
+	wu = log --stat origin..@{0}
