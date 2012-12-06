@@ -5,7 +5,9 @@ export PATH=$PATH:$HOME/bin
 if [ -f $HOME/perl5/bin/perlbrew ] ; then
     export PATH=$PATH:$HOME/perl5/bin
 else
-    eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+    if [ -d $HOME/perl5/lib/perl5 ] ; then
+        eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+    fi
 fi
 
 # Linux Server Hack #15

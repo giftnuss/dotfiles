@@ -1,3 +1,4 @@
 
 prog LXterm xterm lxterminal
+prog Geany geany geany
 prog Gimp gimp gimp
