@@ -13,3 +13,5 @@ fi
 # Linux Server Hack #15
 alias ducks='du -cks * |sort -rn |head -11'
 
+# find without dot
+alias unfind="find|grep -v '/\\.'"
