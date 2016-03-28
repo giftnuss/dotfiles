@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-die("Keybindings for geany needs a fix");
+#die("Keybindings for geany needs a fix");
 use strict;
 use warnings;
 use English qw( -no_match_vars );    # Avoids regex performance penalty
@@ -9,7 +9,7 @@ use Getopt::Long;
 use Cwd qw(realpath);
 use File::Spec;
 
-our $VERSION = '0.5';
+our $VERSION = '0.5.1';
 
 # save path to this dfm program, for use in recursive calls
 my $self_dfm = $0;
